@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { ExternalLink, Shield, Search, CheckCircle, AlertCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { CardPhotoAttach } from "@/components/card-photo-attach"
 
 const SERVICES = [
   { id: "PSA", label: "PSA",     color: "border-blue-500 bg-blue-500",     light: "text-blue-400",   hint: "8 digits, e.g. 12345678" },
@@ -85,6 +86,9 @@ export function CertLookup() {
           <p className="text-xs text-zinc-500">Verify PSA, BGS, CGC, SGC &amp; TAG certification details</p>
         </CardHeader>
         <CardContent className="space-y-5">
+          {/* Photo attach — zoom in to read the cert number off the slab */}
+          <CardPhotoAttach label="Attach a photo of the slab (optional)" />
+
           {/* Service tabs */}
           <div>
             <Label className="text-zinc-400 text-xs mb-2 block">Grading Service</Label>
@@ -123,7 +127,7 @@ export function CertLookup() {
                 Look Up
               </Button>
             </div>
-            <p className="text-xs text-zinc-600 mt-1">Numbers only — found on the label inside the slab</p>
+            <p className="text-xs text-zinc-600 mt-1">Numbers only — found on the label inside the slab. Zoom the photo above if you can't read it.</p>
           </div>
 
           {error && (

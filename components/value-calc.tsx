@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { DollarSign, TrendingUp, TrendingDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { CardPhotoAttach } from "@/components/card-photo-attach"
 
 const SERVICES = {
   PSA: [
@@ -73,6 +74,9 @@ export function ValueCalc() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
+            {/* Photo attach — reference while filling in prices */}
+            <CardPhotoAttach label="Attach card photo (optional)" />
+
             {/* Service */}
             <div>
               <Label className="text-zinc-400 text-xs mb-1 block">Grading Service</Label>

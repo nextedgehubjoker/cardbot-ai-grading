@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { ExternalLink, TrendingUp, Search, DollarSign } from "lucide-react"
+import { CardPhotoAttach } from "@/components/card-photo-attach"
 
 const GRADES = ["Raw (Ungraded)", "PSA 7", "PSA 8", "PSA 9", "PSA 10", "BGS 8", "BGS 9", "BGS 9.5", "BGS 10", "CGC 9", "CGC 9.5", "CGC 10"]
 
@@ -57,6 +58,9 @@ export function MarketValue() {
           <p className="text-xs text-zinc-500">Generate live sold-listing searches across major platforms</p>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Photo attach — reference while filling in card details */}
+          <CardPhotoAttach label="Attach card photo (optional)" />
+
           <div>
             <Label className="text-zinc-400 text-xs mb-1.5 block">Card Name *</Label>
             <Input value={cardName} onChange={(e) => setCardName(e.target.value)}

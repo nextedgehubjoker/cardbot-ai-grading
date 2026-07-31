@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Search, ExternalLink, TrendingUp, AlertCircle, Sparkles, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { CardPhotoAttach } from "@/components/card-photo-attach"
 
 const LANGUAGES = ["Any / Not sure", "English", "Japanese", "Traditional Chinese", "Simplified Chinese", "Korean", "German", "French", "Spanish", "Italian", "Portuguese", "Indonesian"]
 
@@ -88,6 +89,9 @@ export function PriceCheck() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Photo attach — zoom in to read set/number/language off the card */}
+          <CardPhotoAttach label="Attach card photo (optional)" />
+
           <div>
             <Label className="text-zinc-400 text-xs mb-1.5 block">Card Name *</Label>
             <Input value={cardName} onChange={(e) => setCardName(e.target.value)}
